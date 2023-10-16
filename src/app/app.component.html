@@ -1,131 +1,40 @@
-<h1 class="text-5xl mt-6 font-black text-white text-center mb-12">Angular Colors</h1>
+<div class="p-2 pt-6 mx-auto mt-12 overflow-hidden bg-white shadow-md max-w-7xl rounded-xl">
+  <div class="px-4 sm:px-6 lg:px-8">
+    <div class="sm:flex sm:items-center">
+      <div class="sm:flex-auto">
+        <h1 class="text-base font-semibold leading-6 text-gray-900">PERMISSION ROLE TO PERMISSION MAPPING</h1>
+        <p class="mt-2 text-sm text-gray-700">Bearbeiten Sie ihre Permissions</p>
+      </div>
+      <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
+        <!-- <label for="all">
+          Check all
+          <input id="all" class="ml-2 scale-150 cursor-pointer" (change)="toggleAll($event)" type="checkbox" />
+        </label> -->
 
-<div class="flex flex-col mx-auto gap-2 max-w-7xl">
-  <div class="flex flex-row justify-evenly border-[.5rem] border-gray-500 rounded-sm items-center">
-    <div class="text-center text-white p-2 font-semibold w-28">Primary</div>
-    <input id="colorpicker" type="color" (change)="changeColor('primary', $event)" />
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-primary-100 font-bold text-primary-100-text">100</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-primary-200 font-bold text-primary-200-text">200</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-primary-300 font-bold text-primary-300-text">300</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-primary-400 font-bold text-primary-400-text">400</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-primary-500 font-bold text-primary-500-text">500</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-primary-600 font-bold text-primary-600-text">600</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-primary-700 font-bold text-primary-700-text">700</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-primary-800 font-bold text-primary-800-text">800</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-primary-900 font-bold text-primary-900-text">900</div>
-  </div>
-
-  <div class="flex flex-row justify-evenly border-[.5rem] border-gray-500 rounded-sm items-center">
-    <div class="text-center text-white p-2 font-semibold w-28">secondary</div>
-    <input id="colorpicker" type="color" (change)="changeColor('secondary', $event)" />
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-secondary-100 font-bold text-secondary-100-text">100</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-secondary-200 font-bold text-secondary-200-text">200</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-secondary-300 font-bold text-secondary-300-text">300</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-secondary-400 font-bold text-secondary-400-text">400</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-secondary-500 font-bold text-secondary-500-text">500</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-secondary-600 font-bold text-secondary-600-text">600</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-secondary-700 font-bold text-secondary-700-text">700</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-secondary-800 font-bold text-secondary-800-text">800</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-secondary-900 font-bold text-secondary-900-text">900</div>
-  </div>
-
-  <div class="flex flex-row justify-evenly border-[.5rem] border-gray-500 rounded-sm items-center">
-    <div class="text-center text-white p-2 font-semibold w-28">contrast</div>
-    <input id="colorpicker" type="color" (change)="changeColor('contrast', $event)" />
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-contrast-100 font-bold text-contrast-100-text">100</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-contrast-200 font-bold text-contrast-200-text">200</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-contrast-300 font-bold text-contrast-300-text">300</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-contrast-400 font-bold text-contrast-400-text">400</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-contrast-500 font-bold text-contrast-500-text">500</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-contrast-600 font-bold text-contrast-600-text">600</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-contrast-700 font-bold text-contrast-700-text">700</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-contrast-800 font-bold text-contrast-800-text">800</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-contrast-900 font-bold text-contrast-900-text">900</div>
-  </div>
-
-  <div class="flex flex-row justify-evenly border-[.5rem] border-gray-500 rounded-sm items-center">
-    <div class="text-center text-white p-2 font-semibold w-28">surface</div>
-    <input id="colorpicker" type="color" (change)="changeColor('surface', $event)" />
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-surface-100 font-bold text-surface-100-text">100</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-surface-200 font-bold text-surface-200-text">200</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-surface-300 font-bold text-surface-300-text">300</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-surface-400 font-bold text-surface-400-text">400</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-surface-500 font-bold text-surface-500-text">500</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-surface-600 font-bold text-surface-600-text">600</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-surface-700 font-bold text-surface-700-text">700</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-surface-800 font-bold text-surface-800-text">800</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-surface-900 font-bold text-surface-900-text">900</div>
-  </div>
-
-  <div class="flex flex-row justify-evenly border-[.5rem] border-gray-500 rounded-sm items-center">
-    <div class="text-center text-white p-2 font-semibold w-28">background</div>
-    <input id="colorpicker" type="color" (change)="changeColor('background', $event)" />
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-background-100 font-bold text-background-100-text">100</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-background-200 font-bold text-background-200-text">200</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-background-300 font-bold text-background-300-text">300</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-background-400 font-bold text-background-400-text">400</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-background-500 font-bold text-background-500-text">500</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-background-600 font-bold text-background-600-text">600</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-background-700 font-bold text-background-700-text">700</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-background-800 font-bold text-background-800-text">800</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-background-900 font-bold text-background-900-text">900</div>
-  </div>
-
-  <div class="flex flex-row justify-evenly border-[.5rem] border-gray-500 rounded-sm items-center">
-    <div class="text-center text-white p-2 font-semibold w-28">error</div>
-    <input id="colorpicker" type="color" (change)="changeColor('error', $event)" />
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-error-100 font-bold text-error-100-text">100</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-error-200 font-bold text-error-200-text">200</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-error-300 font-bold text-error-300-text">300</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-error-400 font-bold text-error-400-text">400</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-error-500 font-bold text-error-500-text">500</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-error-600 font-bold text-error-600-text">600</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-error-700 font-bold text-error-700-text">700</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-error-800 font-bold text-error-800-text">800</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-error-900 font-bold text-error-900-text">900</div>
-  </div>
-
-  <div class="flex flex-row justify-evenly border-[.5rem] border-gray-500 rounded-sm items-center">
-    <div class="text-center text-white p-2 font-semibold w-28">success</div>
-    <input id="colorpicker" type="color" (change)="changeColor('success', $event)" />
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-success-100 font-bold text-success-100-text">100</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-success-200 font-bold text-success-200-text">200</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-success-300 font-bold text-success-300-text">300</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-success-400 font-bold text-success-400-text">400</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-success-500 font-bold text-success-500-text">500</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-success-600 font-bold text-success-600-text">600</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-success-700 font-bold text-success-700-text">700</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-success-800 font-bold text-success-800-text">800</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-success-900 font-bold text-success-900-text">900</div>
-  </div>
-
-  <div class="flex flex-row justify-evenly border-[.5rem] border-gray-500 rounded-sm items-center">
-    <div class="text-center text-white p-2 font-semibold w-28">warning</div>
-    <input id="colorpicker" type="color" (change)="changeColor('warning', $event)" />
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-warning-100 font-bold text-warning-100-text">100</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-warning-200 font-bold text-warning-200-text">200</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-warning-300 font-bold text-warning-300-text">300</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-warning-400 font-bold text-warning-400-text">400</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-warning-500 font-bold text-warning-500-text">500</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-warning-600 font-bold text-warning-600-text">600</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-warning-700 font-bold text-warning-700-text">700</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-warning-800 font-bold text-warning-800-text">800</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-warning-900 font-bold text-warning-900-text">900</div>
-  </div>
-
-  <div class="flex flex-row justify-evenly border-[.5rem] border-gray-500 rounded-sm items-center">
-    <div class="text-center text-white p-2 font-semibold w-28">info</div>
-    <input id="colorpicker" type="color" (change)="changeColor('info', $event)" />
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-info-100 font-bold text-info-100-text">100</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-info-200 font-bold text-info-200-text">200</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-info-300 font-bold text-info-300-text">300</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-info-400 font-bold text-info-400-text">400</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-info-500 font-bold text-info-500-text">500</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-info-600 font-bold text-info-600-text">600</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-info-700 font-bold text-info-700-text">700</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-info-800 font-bold text-info-800-text">800</div>
-    <div class="flex-grow transition-colors duration-1000 ease-in-out p-4 flex items-center justify-center bg-info-900 font-bold text-info-900-text">900</div>
+        <button (click)="onSaveClick()" class="px-4 py-2 ml-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none">Save</button>
+      </div>
+    </div>
+    <div class="flow-root mt-8">
+      <div class="max-h-[80vh] overflow-x-auto">
+        <table class="min-w-full border-separate border-spacing-0">
+          <thead>
+            <tr>
+              <th scope="col" class="sticky top-0 z-10 border-b border-gray-300 bg-white px-3 py-3.5 text-left text-xs font-semibold text-gray-900"><div class="w-5 h-5 overflow-visible">NAME</div></th>
+              <th *ngFor="let item of matrixData[0].xOptions" scope="col" class="sticky top-0 z-10 border-b border-gray-300 bg-white px-3 py-3.5 text-left text-xs font-semibold text-gray-900"><div class="w-5 h-5 overflow-visible -rotate-45">u_read</div></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of matrixData; let i = index" [class.bg-blue-100]="i + 1 === hoveredRow">
+              <td class="px-3 py-4 text-sm text-gray-500 border-b border-gray-200 sm:table-cell">{{row.yName}}</td>
+              <td *ngFor="let option of row.xOptions; let colIndex = index" [class.bg-blue-100]="colIndex + 1 === hoveredColumn" class="px-3 py-4 text-sm text-gray-500 border-b border-gray-200">
+                <div class="flex items-center justify-center">
+                  <input [(ngModel)]="option.value" class="scale-150 cursor-pointer" type="checkbox" />
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </div>
-
-<router-outlet></router-outlet>

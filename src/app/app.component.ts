@@ -1,145 +1,82 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, HostListener, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+
+export interface MatrixData {
+  yName: string;
+  xOptions: { name: string; value: boolean }[];
+};
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, FormsModule],
   templateUrl: './app.component.html',
-  styles: [
-    `
-      .button {
-        background-color: var(--primary-color);
-      }
-    `,
-  ],
 })
 export class AppComponent {
-  colors: { name: string; value: string }[] = [
-    { name: 'primary', value: '#0c61cf' },
-    { name: 'secondary', value: '#9da6b3' },
-    { name: 'contrast', value: '#d900ff' },
-    { name: 'surface', value: '#ffffff' },
-    { name: 'background', value: '#d1dedd' },
-    { name: 'error', value: '#7d0000' },
-    { name: 'success', value: '#078700' },
-    { name: 'warning', value: '#875100' },
-    { name: 'info', value: '#007afc' },
+
+  @Output() saveClicked: EventEmitter<MatrixData[]> = new EventEmitter<MatrixData[]>();
+
+  public permissions: string[] = [
+    'user', 'anfragen', 'user-edit', 'permission-4', 'permission-5', 'permission-6',
+    'permission-7', 'permission-8', 'permission-9', 'permission-10', 'permission-11',
+    'permission-12', 'permission-13', 'permission-14', 'permission-15', 'permission-16',
+    'permission-17', 'permission-18', 'permission-19', 'permission-20', 'permission-21',
+    'permission-22', 'permission-23', 'permission-24', 'permission-25', 'permission-26',
+    'permission-27', 'permission-28', 'permission-29', 'permission-30', 'permission-31',
+    'permission-32', 'permission-33', 'permission-34', 'permission-35', 'permission-36',
+    'permission-37', 'permission-38', 'permission-39', 'permission-40'
   ];
+  public permissionVariants: string[] = ['u_read', 'u_write', 'u_delete', 'u_execute', 'o_read', 'o_write', 'o_delete', 'o_execute', 'g_read', 'g_write', 'g_delete', 'g_execute', 's_read', 's_write', 's_delete', 's_execute'];
+
+  public matrixData: MatrixData[] = [];
+
+  onSaveClick() {
+
+    console.log(this.matrixData);
+
+    this.saveClicked.emit(this.matrixData);
+  }
 
   constructor() {
-    this.colors.forEach((color) => {
-      this.changeCINIT(color.name, color.value);
+    this.permissions.forEach((permission) => {
+      this.matrixData.push({
+        yName: permission,
+        xOptions: this.permissionVariants.map((variant) => ({
+          name: variant,
+          value: false,
+        })),
+      });
     });
   }
 
-  title = 'angular';
-
-
-  lightShades: number[] = [100, 200, 300, 400];
-  darkShades: number[] = [600, 700, 800, 900];
-
-  changeCINIT(color: string, value: string) {
-
-
-    console.log('changeColor', color, value);
-
-
-    document.documentElement.style.setProperty(`--${color}-500`, value);
-    document.documentElement.style.setProperty(`--text-${color}-500`, this.getTextColor(value));
-
-    this.lightShades.forEach((shade, index) => {
-      const factor = (4 - index) * 10;
-      document.documentElement.style.setProperty(`--${color}-${shade}`, this.lightenColor(value, factor));
-    });
-
-    this.darkShades.forEach((shade, index) => {
-      const factor = (index + 1) * 10;
-      document.documentElement.style.setProperty(`--${color}-${shade}`, this.darkenColor(value, factor));
-    });
-
-    this.lightShades.forEach((shade, index) => {
-      const factor = (4 - index) * 10;
-      const textColor = this.getTextColor(this.lightenColor(value, factor));
-      document.documentElement.style.setProperty(`--text-${color}-${shade}`, textColor);
-    });
-
-    this.darkShades.forEach((shade, index) => {
-      const factor = (index + 1) * 10;
-      const textColor = this.getTextColor(this.darkenColor(value, factor));
-      document.documentElement.style.setProperty(`--text-${color}-${shade}`, textColor);
+  public toggleAll(event: any) {
+    this.matrixData.forEach((permission) => {
+      permission.xOptions.forEach((option) => {
+        option.value = event.target.checked;
+      });
     });
   }
 
-  changeColor(color: string, event: Event) {
+  hoveredRow: number | null = null;
+  hoveredColumn: number | null = null;
 
-    const target = event?.target as HTMLInputElement;
-    const value = target.value;
+  @HostListener('mouseover', ['$event'])
+  onMouseOver(event: MouseEvent) {
+    const target = event.target as HTMLElement;
 
-    console.log('changeColor', color, value);
+    if (target.tagName === 'TD') {
+      const row = target.parentElement as HTMLTableRowElement;
+      const columnIndex = Array.from(row.children).indexOf(target);
 
-
-    document.documentElement.style.setProperty(`--${color}-500`, value);
-    document.documentElement.style.setProperty(`--text-${color}-500`, this.getTextColor(value));
-
-    this.lightShades.forEach((shade, index) => {
-      const factor = (4 - index) * 10;
-      document.documentElement.style.setProperty(`--${color}-${shade}`, this.lightenColor(value, factor));
-    });
-
-    this.darkShades.forEach((shade, index) => {
-      const factor = (index + 1) * 10;
-      document.documentElement.style.setProperty(`--${color}-${shade}`, this.darkenColor(value, factor));
-    });
-
-    this.lightShades.forEach((shade, index) => {
-      const factor = (4 - index) * 10;
-      const textColor = this.getTextColor(this.lightenColor(value, factor));
-      document.documentElement.style.setProperty(`--text-${color}-${shade}`, textColor);
-    });
-
-    this.darkShades.forEach((shade, index) => {
-      const factor = (index + 1) * 10;
-      const textColor = this.getTextColor(this.darkenColor(value, factor));
-      document.documentElement.style.setProperty(`--text-${color}-${shade}`, textColor);
-    });
-  }
-
-  lightenColor(color: any, percent: any) {
-    const num = parseInt(color.replace('#', ''), 16),
-      amt = Math.round(2.55 * percent),
-      R = (num >> 16) + amt,
-      G = ((num >> 8) & 0x00ff) + amt,
-      B = (num & 0x0000ff) + amt;
-    return '#' + (0x1000000 + (R < 255 ? (R < 1 ? 0 : R) : 255) * 0x10000 + (G < 255 ? (G < 1 ? 0 : G) : 255) * 0x100 + (B < 255 ? (B < 1 ? 0 : B) : 255)).toString(16).slice(1);
-  }
-
-  darkenColor(color: any, percent: any) {
-    const num = parseInt(color.replace('#', ''), 16),
-      amt = Math.round(2.55 * -percent),
-      R = (num >> 16) + amt,
-      G = ((num >> 8) & 0x00ff) + amt,
-      B = (num & 0x0000ff) + amt;
-    return '#' + (0x1000000 + (R < 255 ? (R < 1 ? 0 : R) : 255) * 0x10000 + (G < 255 ? (G < 1 ? 0 : G) : 255) * 0x100 + (B < 255 ? (B < 1 ? 0 : B) : 255)).toString(16).slice(1);
-  }
-
-  getTextColor(color: string): string {
-
-    if (color === '#000000') {
-      return '#FFFFFF';
+      this.hoveredRow = row.rowIndex;
+      this.hoveredColumn = columnIndex;
     }
-    const rgb = parseInt(color.replace('#', ''), 16);
-    const red = (rgb >> 16) & 0xff;
-    const green = (rgb >> 8) & 0xff;
-    const blue = rgb & 0xff;
+  }
 
-    const luma = (0.299 * red + 0.587 * green + 0.114 * blue) / 255;
-
-    const contrastBlack = (luma + 0.05) / 0.05;
-    const contrastWhite = (1.05 - luma) / luma;
-
-    return contrastBlack > contrastWhite ? '#000000' : '#FFFFFF';
+  clearHover() {
+    this.hoveredRow = null;
+    this.hoveredColumn = null;
   }
 }
